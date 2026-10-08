@@ -1,0 +1,40 @@
+spillable intervals=18628 spilled=961 program groups=74 (program names incl. _unroll copies=80)
+hard at first visit=1598 spilled among them=746
+
+1) Leave-one-project-out on hard intervals, 10 random-forest seeds
+   test        model PR-AUC mean     sd    min    max | weight | wins
+   polybench               0.875  0.003  0.869  0.878 |  0.784 | 10/10
+   zlib                    0.887  0.004  0.883  0.893 |  0.663 | 10/10
+   lua                     0.781  0.003  0.776  0.784 |  0.703 | 10/10
+
+2-3) Hard intervals, program-grouped 5-fold CV repeated 10 times with reshuffled folds (50 folds)
+   model                      PR-AUC mean     sd    min | beats weight | beats/ties RF
+   Spill weight (baseline)          0.702  0.057  0.594 |     0/50     |     0/50
+   Logistic regression              0.751  0.052  0.661 |    41/50     |     0/50
+   Decision tree depth 3            0.774  0.069  0.620 |    42/50     |     0/50
+   Decision tree depth 5            0.800  0.072  0.654 |    47/50     |     0/50
+   Random forest (300)              0.912  0.043  0.807 |    50/50     |    50/50
+   Hist gradient boosting           0.899  0.041  0.805 |    50/50     |     6/50
+
+4) Permutation importance on hard intervals (mean drop in PR-AUC on held-out folds, 5 folds x 10 shuffles)
+   uses                              0.1453
+   log_weight                        0.0613
+   log_size                          0.0479
+   defs                              0.0394
+   loop_frac                         0.0251
+   reg_class (all columns summed)    0.0236
+   max_depth                         0.0144
+   segments                          0.0111
+   crosses_mask                      0.0058
+   total_regs                        0.0037
+
+5) Intervals that HAD a free register at first visit: 17030, later spilled: 215 (1.26%, so random-guess PR-AUC 0.013)
+   within this group, PR-AUC  model [0.343 0.688 0.801 0.562 0.749] mean 0.629
+                              weight [0.045 0.016 0.022 0.027 0.029] mean 0.028
+
+   End to end over ALL spillable intervals, same grouped 5 folds as first_eval.py
+   weight only                        per fold [0.092 0.135 0.054 0.143 0.135]  mean 0.112
+   gate + weight                      per fold [0.589 0.654 0.495 0.472 0.61 ]  mean 0.564
+   gate + model (current)             per fold [0.743 0.79  0.683 0.675 0.704]  mean 0.719
+   one model, free_regs as a feature  per fold [0.814 0.885 0.902 0.799 0.854]  mean 0.851
+   two models (hard + not hard)       per fold [0.707 0.822 0.797 0.786 0.863]  mean 0.795
