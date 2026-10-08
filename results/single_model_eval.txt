@@ -1,0 +1,35 @@
+spillable intervals=18628 spilled=961 program groups=74 (random-guess PR-AUC 0.052)
+
+1) End to end, program-grouped 5-fold CV repeated 10 times (50 folds)
+   design           PR-AUC mean     sd    min    max
+   weight only            0.110  0.034  0.049  0.179
+   gate + weight          0.554  0.052  0.441  0.676
+   gate + model           0.718  0.042  0.580  0.824
+   single model           0.855  0.036  0.769  0.923
+   single model minus gate + model: mean +0.137, better in 50 of 50 folds
+
+2) End to end, leave one project out (train on two projects, test on the third), 10 seeds
+   test       spills |   weight only | gate + weight |  gate + model |  single model | single better
+   polybench     356 |         0.295 |         0.567 |  0.631 ± 0.002 |  0.801 ± 0.008 | 10/10
+   zlib          186 |         0.174 |         0.555 |  0.740 ± 0.003 |  0.810 ± 0.007 | 10/10
+   lua           419 |         0.070 |         0.589 |  0.655 ± 0.003 |  0.729 ± 0.004 | 10/10
+
+3) Flag the top-N intervals, N = number of real spills in the fold (grouped 5-fold, seed 0)
+   weight only      finds  158 of 961 spills (16.4%)
+   gate + weight    finds  593 of 961 spills (61.7%)
+   gate + model     finds  702 of 961 spills (73.0%)
+   single model     finds  748 of 961 spills (77.8%)
+
+4) Permutation importance in the single model (drop in PR-AUC, grouped 5-fold, 5 shuffles)
+   free_frac                         0.1715
+   log_size                          0.1612
+   uses                              0.1488
+   free_regs                         0.1390
+   log_weight                        0.0807
+   defs                              0.0642
+   reg_class (all columns summed)    0.0401
+   crosses_mask                      0.0312
+   loop_frac                         0.0277
+   max_depth                         0.0158
+   segments                          0.0128
+   total_regs                        0.0062
