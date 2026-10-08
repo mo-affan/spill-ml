@@ -7,3 +7,5 @@ data/ir_unroll/
 data/csv/
 data/dataset.csv
 data/dataset_raw.csv
+demo/llc
+demo/llc.xz

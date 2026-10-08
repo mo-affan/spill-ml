@@ -36,6 +36,16 @@ Windows (PowerShell):
 
 robustness.py takes a few minutes. The other evaluation scripts run in under a minute.
 
+## Live demo (Linux or WSL)
+demo/run_demo.py compiles one program with the patched llc and shows, in under a second, the model's spill probability for each live range next to what LLVM actually did, then the effect of SPILL_EARLY=0.95 on spill and reload instructions.
+
+    cd spill-ml
+    xz -dk demo/llc.xz && chmod +x demo/llc     # prebuilt llc, Linux x86-64 (Ubuntu 24.04)
+    python3 demo/run_demo.py                     # zlib_inflate
+    python3 demo/run_demo.py demo/ir/gemm.ll     # also lu.ll, lua_lvm.ll
+
+demo/llc and demo/llc.xz are not in git; rebuild llc as described below or set LLC to your own build.
+
 ## Regenerate the data (needs LLVM)
 1. Get LLVM 19.1.7 and apply both patches (spill_dump.patch first):
 
