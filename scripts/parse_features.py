@@ -1,9 +1,10 @@
 import os, subprocess, glob, collections
 import pandas as pd
 
-LLC = os.path.expanduser("~/llvm-project/build/bin/llc")
-IR = os.path.expanduser("~/spill-ml/data/ir")
-OUT = os.path.expanduser("~/spill-ml/data/dataset2.csv")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project folder, wherever it is
+LLC = os.environ.get("LLC", os.path.expanduser("~/llvm-project/build/bin/llc"))
+IR = os.path.join(ROOT, "data/ir")
+OUT = os.path.join(ROOT, "data/dataset2.csv")
 NUM = ["segments", "live_size", "weight", "uses", "defs", "max_depth",
        "loop_refs", "crosses_mask", "free_regs", "total_regs", "spillable"]
 
@@ -11,7 +12,7 @@ env = dict(os.environ, SPILL_DUMP="1")
 rows, bad = [], 0
 for ir in sorted(glob.glob(IR + "/*.ll")):
     prog = os.path.basename(ir)[:-3]
-    log = subprocess.run([LLC, "-regalloc=greedy", ir, "-o", "/dev/null"],
+    log = subprocess.run([LLC, "-regalloc=greedy", ir, "-o", os.devnull],
                          capture_output=True, text=True, env=env).stderr
     cur, visits, s_keys = {}, collections.Counter(), set()
     for line in log.splitlines():

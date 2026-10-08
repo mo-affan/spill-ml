@@ -2,8 +2,9 @@ import os, numpy as np, pandas as pd
 from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project folder, wherever it is
 
-H = os.path.expanduser("~/spill-ml")
+H = ROOT
 d = pd.read_csv(f"{H}/data/dataset.csv")
 d = d[np.isfinite(d.weight)].copy()
 d["group"] = d.program.str.replace("_unroll", "", regex=False)

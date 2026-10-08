@@ -1,5 +1,6 @@
 import os, pandas as pd
-H = os.path.expanduser("~/spill-ml/data")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project folder, wherever it is
+H = os.path.join(ROOT, "data")
 d = pd.read_csv(f"{H}/dataset2.csv")
 cols = ["func","vreg","reg_class","segments","live_size","weight","uses","defs",
         "max_depth","loop_refs","crosses_mask","free_regs","total_regs","spillable","spilled"]

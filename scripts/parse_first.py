@@ -1,10 +1,11 @@
 import os, subprocess, glob
 import pandas as pd
 
-LLC = os.path.expanduser("~/llvm-project/build/bin/llc")
-IR = os.path.expanduser("~/spill-ml/data/ir")
-OUT = os.path.expanduser("~/spill-ml/data/dataset3_first.csv")
-KEEP = set(pd.read_csv(os.path.expanduser("~/spill-ml/data/dataset2_dedup.csv"),
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project folder, wherever it is
+LLC = os.environ.get("LLC", os.path.expanduser("~/llvm-project/build/bin/llc"))
+IR = os.path.join(ROOT, "data/ir")
+OUT = os.path.join(ROOT, "data/dataset3_first.csv")
+KEEP = set(pd.read_csv(os.path.join(ROOT, "data/dataset2_dedup.csv"),
                        usecols=["program"]).program)
 NUM = ["segments", "live_size", "weight", "uses", "defs", "max_depth",
        "loop_refs", "crosses_mask", "free_regs", "total_regs", "spillable"]
@@ -15,7 +16,7 @@ for ir in sorted(glob.glob(IR + "/*.ll")):
     prog = os.path.basename(ir)[:-3]
     if prog not in KEEP:
         continue
-    log = subprocess.run([LLC, "-regalloc=greedy", ir, "-o", "/dev/null"],
+    log = subprocess.run([LLC, "-regalloc=greedy", ir, "-o", os.devnull],
                          capture_output=True, text=True, env=env).stderr
     first, visits, spilled = {}, {}, set()
     for line in log.splitlines():

@@ -8,8 +8,9 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import roc_auc_score, average_precision_score
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project folder, wherever it is
 
-H = os.path.expanduser("~/spill-ml")
+H = ROOT
 d = pd.read_csv(f"{H}/data/dataset.csv")
 print("spills among non-spillable rows:", d[~np.isfinite(d.weight)].spilled.sum())
 d = d[np.isfinite(d.weight)].copy()

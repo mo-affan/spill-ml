@@ -2,8 +2,9 @@ import os, numpy as np, pandas as pd
 from sklearn.model_selection import GroupKFold
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score, recall_score, f1_score, average_precision_score
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project folder, wherever it is
 
-H = os.path.expanduser("~/spill-ml")
+H = ROOT
 d = pd.read_csv(f"{H}/data/dataset2_dedup.csv")
 d = d[(d.spillable == 1) & np.isfinite(d.weight) & (d.free_regs == 0)].reset_index(drop=True)
 d["group"] = d.program.str.replace("_unroll", "", regex=False)

@@ -1,8 +1,9 @@
 import re, subprocess, glob, os, csv
 
-LLC = os.path.expanduser("~/llvm-project/build/bin/llc")
-IR_DIR = os.path.expanduser("~/spill-ml/data/ir")
-OUT = os.path.expanduser("~/spill-ml/data/dataset.csv")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project folder, wherever it is
+LLC = os.environ.get("LLC", os.path.expanduser("~/llvm-project/build/bin/llc"))
+IR_DIR = os.path.join(ROOT, "data/ir")
+OUT = os.path.join(ROOT, "data/dataset.csv")
 
 sel_re = re.compile(r'^selectOrSplit (\w+):%(\d+) (.*?)\s+weight:(\S+)')
 spill_re = re.compile(r'^Inline spilling (\w+):%(\d+) ')
@@ -13,7 +14,7 @@ rows = []
 for ir in sorted(glob.glob(IR_DIR + "/*.ll")):
     prog = os.path.basename(ir)[:-3]
     log = subprocess.run(
-        [LLC, "-regalloc=greedy", "-debug-only=regalloc", ir, "-o", "/dev/null"],
+        [LLC, "-regalloc=greedy", "-debug-only=regalloc", ir, "-o", os.devnull],
         capture_output=True, text=True).stderr
     func, last, spill_lines, first = "?", None, 0, len(rows)
     for line in log.splitlines():

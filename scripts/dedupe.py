@@ -1,5 +1,6 @@
 import os, pandas as pd
-P = os.path.expanduser("~/spill-ml/data/dataset.csv")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project folder, wherever it is
+P = os.path.join(ROOT, "data/dataset.csv")
 d = pd.read_csv(P)
 key = ["program", "func", "vreg"]
 lab = d.groupby(key).spilled.max().reset_index()

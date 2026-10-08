@@ -5,8 +5,9 @@ from sklearn.model_selection import GroupKFold
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.inspection import permutation_importance
 from sklearn.metrics import roc_auc_score, average_precision_score
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project folder, wherever it is
 
-H = os.path.expanduser("~/spill-ml")
+H = ROOT
 d = pd.read_csv(f"{H}/data/dataset.csv")
 d = d[np.isfinite(d.weight)].copy()
 d["group"] = d.program.str.replace("_unroll", "", regex=False)
