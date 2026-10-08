@@ -1,0 +1,181 @@
+program,setting,run_s
+correlation,stock,0.009887
+correlation,early@0.98,0.010938
+correlation,early@0.95,0.010046
+correlation,early@0.90,0.009581
+correlation,early@0.80,0.00964
+correlation,stock (repeat),0.009771
+covariance,stock,0.009483
+covariance,early@0.98,0.009408
+covariance,early@0.95,0.009419
+covariance,early@0.90,0.009922
+covariance,early@0.80,0.009596
+covariance,stock (repeat),0.00938
+gemm,stock,0.00268
+gemm,early@0.98,0.002625
+gemm,early@0.95,0.002831
+gemm,early@0.90,0.003376
+gemm,early@0.80,0.003728
+gemm,stock (repeat),0.00268
+gemver,stock,0.000735
+gemver,early@0.98,0.000647
+gemver,early@0.95,0.000673
+gemver,early@0.90,0.000689
+gemver,early@0.80,0.000663
+gemver,stock (repeat),0.000729
+gesummv,stock,0.000175
+gesummv,early@0.98,0.000173
+gesummv,early@0.95,0.000178
+gesummv,early@0.90,0.000173
+gesummv,early@0.80,0.000177
+gesummv,stock (repeat),0.000172
+symm,stock,0.007048
+symm,early@0.98,0.007198
+symm,early@0.95,0.006769
+symm,early@0.90,0.007213
+symm,early@0.80,0.007054
+symm,stock (repeat),0.00711
+syr2k,stock,0.004463
+syr2k,early@0.98,0.004693
+syr2k,early@0.95,0.004644
+syr2k,early@0.90,0.004628
+syr2k,early@0.80,0.004467
+syr2k,stock (repeat),0.004555
+syrk,stock,0.003375
+syrk,early@0.98,0.003221
+syrk,early@0.95,0.002145
+syrk,early@0.90,0.003599
+syrk,early@0.80,0.003556
+syrk,stock (repeat),0.003391
+trmm,stock,0.005102
+trmm,early@0.98,0.005098
+trmm,early@0.95,0.005109
+trmm,early@0.90,0.005062
+trmm,early@0.80,0.005276
+trmm,stock (repeat),0.005034
+2mm,stock,0.017126
+2mm,early@0.98,0.018081
+2mm,early@0.95,0.018422
+2mm,early@0.90,0.016797
+2mm,early@0.80,0.017685
+2mm,stock (repeat),0.017315
+3mm,stock,0.025684
+3mm,early@0.98,0.025984
+3mm,early@0.95,0.026033
+3mm,early@0.90,0.026016
+3mm,early@0.80,0.025717
+3mm,stock (repeat),0.025426
+atax,stock,0.000294
+atax,early@0.98,0.00028
+atax,early@0.95,0.00029
+atax,early@0.90,0.000319
+atax,early@0.80,0.000312
+atax,stock (repeat),0.000295
+bicg,stock,0.000514
+bicg,early@0.98,0.000488
+bicg,early@0.95,0.000513
+bicg,early@0.90,0.000493
+bicg,early@0.80,0.000487
+bicg,stock (repeat),0.000522
+doitgen,stock,0.005732
+doitgen,early@0.98,0.00597
+doitgen,early@0.95,0.005861
+doitgen,early@0.90,0.006084
+doitgen,early@0.80,0.005727
+doitgen,stock (repeat),0.005809
+mvt,stock,0.000455
+mvt,early@0.98,0.000394
+mvt,early@0.95,0.000435
+mvt,early@0.90,0.000471
+mvt,early@0.80,0.000416
+mvt,stock (repeat),0.000537
+cholesky,stock,0.01146
+cholesky,early@0.98,0.011772
+cholesky,early@0.95,0.012995
+cholesky,early@0.90,0.011849
+cholesky,early@0.80,0.011314
+cholesky,stock (repeat),0.011502
+durbin,stock,0.000204
+durbin,early@0.98,0.000214
+durbin,early@0.95,0.000182
+durbin,early@0.90,0.000216
+durbin,early@0.80,0.000202
+durbin,stock (repeat),0.000188
+gramschmidt,stock,0.012889
+gramschmidt,early@0.98,0.012046
+gramschmidt,early@0.95,0.01222
+gramschmidt,early@0.90,0.013279
+gramschmidt,early@0.80,0.012584
+gramschmidt,stock (repeat),0.011925
+lu,stock,0.02492
+lu,early@0.98,0.02533
+lu,early@0.95,0.024921
+lu,early@0.90,0.024026
+lu,early@0.80,0.024379
+lu,stock (repeat),0.025727
+ludcmp,stock,0.02197
+ludcmp,early@0.98,0.022243
+ludcmp,early@0.95,0.021553
+ludcmp,early@0.90,0.022029
+ludcmp,early@0.80,0.021876
+ludcmp,stock (repeat),0.022293
+trisolv,stock,0.00014
+trisolv,early@0.98,0.000146
+trisolv,early@0.95,0.000144
+trisolv,early@0.90,0.000137
+trisolv,early@0.80,0.000136
+trisolv,stock (repeat),0.000141
+deriche,stock,0.007792
+deriche,early@0.98,0.007723
+deriche,early@0.95,0.007999
+deriche,early@0.90,0.00796
+deriche,early@0.80,0.007949
+deriche,stock (repeat),0.008143
+floyd-warshall,stock,0.083482
+floyd-warshall,early@0.98,0.080603
+floyd-warshall,early@0.95,0.080596
+floyd-warshall,early@0.90,0.08255
+floyd-warshall,early@0.80,0.07979
+floyd-warshall,stock (repeat),0.085233
+nussinov,stock,0.017017
+nussinov,early@0.98,0.014121
+nussinov,early@0.95,0.015338
+nussinov,early@0.90,0.014597
+nussinov,early@0.80,0.014281
+nussinov,stock (repeat),0.015856
+adi,stock,0.075647
+adi,early@0.98,0.074881
+adi,early@0.95,0.074635
+adi,early@0.90,0.075289
+adi,early@0.80,0.076623
+adi,stock (repeat),0.07474
+fdtd-2d,stock,0.007033
+fdtd-2d,early@0.98,0.006958
+fdtd-2d,early@0.95,0.007132
+fdtd-2d,early@0.90,0.006851
+fdtd-2d,early@0.80,0.007139
+fdtd-2d,stock (repeat),0.007203
+heat-3d,stock,0.014665
+heat-3d,early@0.98,0.01393
+heat-3d,early@0.95,0.013587
+heat-3d,early@0.90,0.01338
+heat-3d,early@0.80,0.01367
+heat-3d,stock (repeat),0.013676
+jacobi-1d,stock,2.4e-05
+jacobi-1d,early@0.98,2.3e-05
+jacobi-1d,early@0.95,2.3e-05
+jacobi-1d,early@0.90,4.5e-05
+jacobi-1d,early@0.80,2.2e-05
+jacobi-1d,stock (repeat),2.2e-05
+jacobi-2d,stock,0.007958
+jacobi-2d,early@0.98,0.008277
+jacobi-2d,early@0.95,0.007085
+jacobi-2d,early@0.90,0.00716
+jacobi-2d,early@0.80,0.007488
+jacobi-2d,stock (repeat),0.007833
+seidel-2d,stock,0.188649
+seidel-2d,early@0.98,0.191579
+seidel-2d,early@0.95,0.18806
+seidel-2d,early@0.90,0.186315
+seidel-2d,early@0.80,0.18688
+seidel-2d,stock (repeat),0.186454

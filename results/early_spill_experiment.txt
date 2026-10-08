@@ -1,0 +1,35 @@
+llc: /home/claude/llvm/build/bin/llc
+IR files: 76; every setting passed -verify-machineinstrs on every file
+
+1) Totals over all IR files (change against stock in brackets)
+   setting     early  spills        reloads        .text bytes         regalloc s            llc s
+   stock           0     690 ( +0.0%)   1205 ( +0.0%)    288841 ( +0.0%)    0.207 ( +0.0%)    5.29 ( +0.0%)
+   early@0.98    281     713 ( +3.3%)   1189 ( -1.3%)    288449 ( -0.1%)    0.243 (+17.3%)    5.34 ( +1.1%)
+   early@0.95    602     694 ( +0.6%)   2813 (+133.4%)    293205 ( +1.5%)    0.208 ( +0.4%)    5.44 ( +2.9%)
+   early@0.90    630     695 ( +0.7%)   2815 (+133.6%)    293061 ( +1.5%)    0.199 ( -3.9%)    5.34 ( +1.0%)
+   early@0.80    630     695 ( +0.7%)   2815 (+133.6%)    293061 ( +1.5%)    0.195 ( -5.7%)    5.25 ( -0.7%)
+   'early' = live ranges spilled through the early path; spills/reloads = instructions in the final code
+
+   Per project, spill + reload instructions
+   setting    stock  early@0.98  early@0.95  early@0.90  early@0.80
+   project                                                         
+   lua          826         850        1669        1672        1672
+   polybench    455         446         733         733         733
+   zlib         614         606        1105        1105        1105
+
+   Per project, register-allocator time (s)
+   setting    stock  early@0.98  early@0.95  early@0.90  early@0.80
+   project                                                         
+   lua        0.128       0.155       0.135       0.127       0.126
+   polybench  0.028       0.030       0.024       0.025       0.023
+   zlib       0.052       0.058       0.050       0.047       0.047
+
+2) PolyBench run time, MEDIUM dataset, median of 5 runs, 30 kernels
+   Output identical to stock on the MINI dataset for every kernel and setting: yes
+   Geometric mean of run time relative to stock (1.000 = same):
+   stock (repeat)  0.996   (fastest kernel 0.917, slowest 1.180)
+   early@0.98      0.987   (fastest kernel 0.830, slowest 1.106)
+   early@0.95      0.974   (fastest kernel 0.636, slowest 1.134)
+   early@0.90      1.024   (fastest kernel 0.858, slowest 1.875)
+   early@0.80      0.992   (fastest kernel 0.839, slowest 1.391)
+   'stock (repeat)' is stock against itself and shows the measurement noise on this machine.

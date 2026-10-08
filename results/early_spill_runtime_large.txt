@@ -1,0 +1,12 @@
+PolyBench LARGE dataset, median of 5 interleaved runs (seconds)
+  kernel           stock  stock again  early@0.95 |  noise early/stock
+  gemver           0.028        0.029       0.029 |  1.027       1.021
+  ludcmp           5.857        6.375       5.677 |  1.088       0.969
+  fdtd-2d          2.518        2.508       2.589 |  0.996       1.028
+  gramschmidt      6.659        7.006       6.545 |  1.052       0.983
+  deriche          0.401        0.411       0.406 |  1.023       1.013
+  lu               6.530        7.040       6.316 |  1.078       0.967
+  3mm              5.244        5.016       5.653 |  0.957       1.078
+  cholesky         1.924        1.932       1.942 |  1.004       1.010
+  geometric mean                                     |  1.027       1.008
+  noise = stock against itself; early/stock above 1 means early spilling made the program slower

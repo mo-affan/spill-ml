@@ -1,0 +1,133 @@
+Decision tree depth 6, min_samples_leaf 20, 87 nodes, 44 leaves
+End-to-end PR-AUC, grouped 5-fold CV x10: 0.699 +- 0.047 (random 0.052)
+
+|--- free_frac <= 0.096
+|   |--- defs <= 1.500
+|   |   |--- free_frac <= 0.031
+|   |   |   |--- log_weight <= 0.217
+|   |   |   |   |--- uses <= 1.500
+|   |   |   |   |   |--- log_weight <= -1.105
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- log_weight >  -1.105
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- uses >  1.500
+|   |   |   |   |   |--- log_size <= 2.173
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- log_size >  2.173
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- log_weight >  0.217
+|   |   |   |   |--- class: 0
+|   |   |--- free_frac >  0.031
+|   |   |   |--- log_size <= 2.915
+|   |   |   |   |--- uses <= 1.500
+|   |   |   |   |   |--- log_weight <= -4.813
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- log_weight >  -4.813
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- uses >  1.500
+|   |   |   |   |   |--- log_weight <= -1.351
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- log_weight >  -1.351
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- log_size >  2.915
+|   |   |   |   |--- uses <= 1.500
+|   |   |   |   |   |--- log_size <= 3.268
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- log_size >  3.268
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- uses >  1.500
+|   |   |   |   |   |--- loop_frac <= 0.732
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- loop_frac >  0.732
+|   |   |   |   |   |   |--- class: 1
+|   |--- defs >  1.500
+|   |   |--- uses <= 1.500
+|   |   |   |--- free_frac <= 0.033
+|   |   |   |   |--- log_weight <= -3.101
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- log_weight >  -3.101
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- free_frac >  0.033
+|   |   |   |   |--- class: 1
+|   |   |--- uses >  1.500
+|   |   |   |--- log_size <= 3.060
+|   |   |   |   |--- class: 0
+|   |   |   |--- log_size >  3.060
+|   |   |   |   |--- free_regs <= 0.500
+|   |   |   |   |   |--- log_weight <= -0.396
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- log_weight >  -0.396
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- free_regs >  0.500
+|   |   |   |   |   |--- log_size <= 3.584
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- log_size >  3.584
+|   |   |   |   |   |   |--- class: 0
+|--- free_frac >  0.096
+|   |--- log_size <= 3.090
+|   |   |--- log_size <= 2.982
+|   |   |   |--- crosses_mask <= 0.500
+|   |   |   |   |--- class: 0
+|   |   |   |--- crosses_mask >  0.500
+|   |   |   |   |--- uses <= 1.500
+|   |   |   |   |   |--- log_weight <= -3.342
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- log_weight >  -3.342
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- uses >  1.500
+|   |   |   |   |   |--- log_size <= 1.880
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- log_size >  1.880
+|   |   |   |   |   |   |--- class: 0
+|   |   |--- log_size >  2.982
+|   |   |   |--- free_regs <= 4.500
+|   |   |   |   |--- segments <= 1.500
+|   |   |   |   |   |--- log_size <= 3.021
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- log_size >  3.021
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- segments >  1.500
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- free_regs >  4.500
+|   |   |   |   |--- class: 0
+|   |--- log_size >  3.090
+|   |   |--- uses <= 1.500
+|   |   |   |--- total_regs <= 15.500
+|   |   |   |   |--- free_regs <= 10.500
+|   |   |   |   |   |--- log_size <= 3.566
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- log_size >  3.566
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- free_regs >  10.500
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- total_regs >  15.500
+|   |   |   |   |--- log_weight <= -1.065
+|   |   |   |   |   |--- log_size <= 3.309
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- log_size >  3.309
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- log_weight >  -1.065
+|   |   |   |   |   |--- class: 0
+|   |   |--- uses >  1.500
+|   |   |   |--- uses <= 3.500
+|   |   |   |   |--- log_size <= 3.366
+|   |   |   |   |   |--- free_regs <= 7.500
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- free_regs >  7.500
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- log_size >  3.366
+|   |   |   |   |   |--- log_weight <= -0.913
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- log_weight >  -0.913
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- uses >  3.500
+|   |   |   |   |--- log_size <= 4.088
+|   |   |   |   |   |--- uses <= 4.500
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- uses >  4.500
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- log_size >  4.088
+|   |   |   |   |   |--- log_weight <= -2.943
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- log_weight >  -2.943
+|   |   |   |   |   |   |--- class: 0

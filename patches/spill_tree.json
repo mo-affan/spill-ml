@@ -1,0 +1,626 @@
+{
+"features": [
+"log_weight",
+"segments",
+"log_size",
+"uses",
+"defs",
+"max_depth",
+"loop_frac",
+"crosses_mask",
+"total_regs",
+"free_regs",
+"free_frac"
+],
+"nodes": [
+{
+"feature": "free_frac",
+"threshold": 0.09583333507180214,
+"left": 1,
+"right": 42,
+"prob": 0.5000000000000263
+},
+{
+"feature": "defs",
+"threshold": 1.5,
+"left": 2,
+"right": 27,
+"prob": 0.902652884766547
+},
+{
+"feature": "free_frac",
+"threshold": 0.03125,
+"left": 3,
+"right": 12,
+"prob": 0.9524373587703191
+},
+{
+"feature": "log_weight",
+"threshold": 0.2170998528599739,
+"left": 4,
+"right": 11,
+"prob": 0.9719722002194022
+},
+{
+"feature": "uses",
+"threshold": 1.5,
+"left": 5,
+"right": 8,
+"prob": 0.9739885856846637
+},
+{
+"feature": "log_weight",
+"threshold": -1.1054054498672485,
+"left": 6,
+"right": 7,
+"prob": 0.9863972539721859
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.9902068185408058
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.911295598986825
+},
+{
+"feature": "log_size",
+"threshold": 2.172941565513611,
+"left": 9,
+"right": 10,
+"prob": 0.9525404576638716
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.9598542120513379
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "log_size",
+"threshold": 2.914860248565674,
+"left": 13,
+"right": 20,
+"prob": 0.769145013492177
+},
+{
+"feature": "uses",
+"threshold": 1.5,
+"left": 14,
+"right": 17,
+"prob": 0.5087725613575326
+},
+{
+"feature": "log_weight",
+"threshold": -4.813314437866211,
+"left": 15,
+"right": 16,
+"prob": 0.6873127756420002
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.8873727564961158
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.5409601146405537
+},
+{
+"feature": "log_weight",
+"threshold": -1.350986123085022,
+"left": 18,
+"right": 19,
+"prob": 0.13189446650939146
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.40507635163021055
+},
+{
+"feature": "uses",
+"threshold": 1.5,
+"left": 21,
+"right": 24,
+"prob": 0.8939103315992106
+},
+{
+"feature": "log_size",
+"threshold": 3.2678507566452026,
+"left": 22,
+"right": 23,
+"prob": 0.9645091934403909
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.932377517811593
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.9829868917883363
+},
+{
+"feature": "loop_frac",
+"threshold": 0.7321428656578064,
+"left": 25,
+"right": 26,
+"prob": 0.7157760824558487
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.8439219657597065
+},
+{
+"feature": "uses",
+"threshold": 1.5,
+"left": 28,
+"right": 33,
+"prob": 0.6278824986496959
+},
+{
+"feature": "free_frac",
+"threshold": 0.03333333507180214,
+"left": 29,
+"right": 32,
+"prob": 0.9557545042582262
+},
+{
+"feature": "log_weight",
+"threshold": -3.1008447408676147,
+"left": 30,
+"right": 31,
+"prob": 0.984528945843261
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.9772188507490991
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.9878662491612615
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.5765898076075782
+},
+{
+"feature": "log_size",
+"threshold": 3.0599411725997925,
+"left": 34,
+"right": 35,
+"prob": 0.4442293185818499
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "free_regs",
+"threshold": 0.5,
+"left": 36,
+"right": 39,
+"prob": 0.5886615166163479
+},
+{
+"feature": "log_weight",
+"threshold": -0.3964390307664871,
+"left": 37,
+"right": 38,
+"prob": 0.7121043102377681
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.776308585747623
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "log_size",
+"threshold": 3.5835384130477905,
+"left": 40,
+"right": 41,
+"prob": 0.13992555045144905
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.2994914392269872
+},
+{
+"feature": "log_size",
+"threshold": 3.0895516872406006,
+"left": 43,
+"right": 60,
+"prob": 0.1506204878647927
+},
+{
+"feature": "log_size",
+"threshold": 2.9818183183670044,
+"left": 44,
+"right": 53,
+"prob": 0.013221277883245276
+},
+{
+"feature": "crosses_mask",
+"threshold": 0.5,
+"left": 45,
+"right": 46,
+"prob": 0.005619632292131589
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "uses",
+"threshold": 1.5,
+"left": 47,
+"right": 50,
+"prob": 0.03607289923140714
+},
+{
+"feature": "log_weight",
+"threshold": -3.342369318008423,
+"left": 48,
+"right": 49,
+"prob": 0.11774487277962198
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.22965431178667636
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.04782711096312086
+},
+{
+"feature": "log_size",
+"threshold": 1.8802112340927124,
+"left": 51,
+"right": 52,
+"prob": 0.0
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "free_regs",
+"threshold": 4.5,
+"left": 54,
+"right": 59,
+"prob": 0.1346311873611659
+},
+{
+"feature": "segments",
+"threshold": 1.5,
+"left": 55,
+"right": 58,
+"prob": 0.4080735442443461
+},
+{
+"feature": "log_size",
+"threshold": 3.0211822986602783,
+"left": 56,
+"right": 57,
+"prob": 0.7195112845749192
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.8213007298591418
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.5765898076075782
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "uses",
+"threshold": 1.5,
+"left": 61,
+"right": 72,
+"prob": 0.5316809816562058
+},
+{
+"feature": "total_regs",
+"threshold": 15.5,
+"left": 62,
+"right": 67,
+"prob": 0.8873727564961152
+},
+{
+"feature": "free_regs",
+"threshold": 10.5,
+"left": 63,
+"right": 66,
+"prob": 0.9227061869938483
+},
+{
+"feature": "log_size",
+"threshold": 3.5657143592834473,
+"left": 64,
+"right": 65,
+"prob": 0.933956429111401
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.8623096446700506
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.9701719535663292
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "log_weight",
+"threshold": -1.0654186606407166,
+"left": 68,
+"right": 71,
+"prob": 0.6001171904854908
+},
+{
+"feature": "log_size",
+"threshold": 3.3086379766464233,
+"left": 69,
+"right": 70,
+"prob": 0.8033558420298752
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.4917608417302232
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.8833121437652671
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "uses",
+"threshold": 3.5,
+"left": 73,
+"right": 80,
+"prob": 0.2450130906487612
+},
+{
+"feature": "log_size",
+"threshold": 3.3656750917434692,
+"left": 74,
+"right": 77,
+"prob": 0.46560598353894633
+},
+{
+"feature": "free_regs",
+"threshold": 7.5,
+"left": 75,
+"right": 76,
+"prob": 0.15628116810597534
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.2900413711583919
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "log_weight",
+"threshold": -0.913330078125,
+"left": 78,
+"right": 79,
+"prob": 0.6694600794592337
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.7441707258307734
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.1907368421052629
+},
+{
+"feature": "log_size",
+"threshold": 4.088335990905762,
+"left": 81,
+"right": 84,
+"prob": 0.08084991488037632
+},
+{
+"feature": "uses",
+"threshold": 4.5,
+"left": 82,
+"right": 83,
+"prob": 0.02600706152001585
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.13629473050797083
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+},
+{
+"feature": "log_weight",
+"threshold": -2.9434168338775635,
+"left": 85,
+"right": 86,
+"prob": 0.5166363514074659
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.7021078735275882
+},
+{
+"feature": null,
+"threshold": -2.0,
+"left": -1,
+"right": -1,
+"prob": 0.0
+}
+]
+}

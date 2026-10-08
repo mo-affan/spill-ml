@@ -1,0 +1,13 @@
+llc: /home/claude/llvm/build/bin/llc
+IR files with live ranges: 73, spillable first-visit live ranges: 16967, spilled: 874
+Tree probability printed by llc equals the Python tree on the printed features: 16967 of 16967 (100.00%)
+
+PR-AUC of the in-compiler tree against LLVM's real decisions (random guess = spill rate)
+  set         ranges spills |   tree  weight  random
+  all          16967    874 |  0.737   0.101   0.052
+  lua          10573    390 |  0.660   0.078   0.037
+  polybench     3089    287 |  0.795   0.303   0.093
+  zlib          3305    197 |  0.819   0.180   0.060
+
+Note: the tree was trained on data/dataset3_first.csv, which came from the same three projects,
+so this is a check that the compiled-in model works, not a test on unseen code.
